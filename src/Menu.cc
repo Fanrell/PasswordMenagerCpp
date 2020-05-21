@@ -7,13 +7,16 @@ class Menu
 {
     int menu_pos = 1;
     int members;
+    string flierPath = "1";
 private:
-   
+   void FileList();
     
 public:
-
     void MenuDraw(int argc, string test[]);
-    void PointerDraw(int c);
+    void PointerDraw(int c, bool enter);
+    virtual void EventHandler(int c, bool *exit_flag);
+    //void FileList();
+    
 };
 
 
@@ -23,29 +26,37 @@ void Menu::MenuDraw(int argc, string test[])
     for(int i = 0; i < argc; i++)
     {
         const char *t = test[i].c_str();
-        printw("   ");
+        printw("%i.   ",i+1);
         printw(t);
         printw("\n");
     }
+    printw("Option: ");
+}
+void Menu::FileList()
+{
+        move(members+5,0);
+        if(flierPath.empty())
+        {
+            
+            printw("You didn't open file");
+        }
+        else
+        {
+            printw("You opened file");
+        }
+
 }
 
-void Menu::PointerDraw(int c)
+void Menu::EventHandler(int c, bool *exit_flag)
 {
-    move(1+menu_pos,0);
-    printw(">");
+    switch (c)
+    {
+    case '3':
+        FileList();
+        break;
+    case '4':
+        *exit_flag = true;
 
-switch (c)
-   {
-   case KEY_UP:
-         menu_pos--;
-         if(menu_pos<1)
-           menu_pos = 1;
-         break;
-   case KEY_DOWN:
-         menu_pos++;
-        if(menu_pos > members)
-           menu_pos = members;
-
-         break;
+        break;
     }
 }
