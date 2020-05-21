@@ -1,8 +1,13 @@
 #include <ncurses.h>
-#include "menu.cc"
-int menu_pos = 1;
+#include "Menu.cc"
+#include <iostream>
+using namespace std;
+
 int c;
 bool exit_flag = FALSE;
+string test[] = {"test\0","test2\0","1","t"};
+
+Menu mainMenu;
 int main() {
   initscr();
   keypad(stdscr,TRUE);
@@ -11,46 +16,12 @@ int main() {
   move(0, 0);
   printw("Password Menager \n");
   printw("============================= \n");
-  drawMenu();
-  drawCursor(menu_pos);
+  mainMenu.MenuDraw(4,test);
+  mainMenu.PointerDraw(c);
   c = getch();
-  switch (c)
-  {
-  case KEY_UP:
-        menu_pos--;
-        if(menu_pos<1)
-          menu_pos = 4;
-        break;
-  case KEY_DOWN:
-        menu_pos++;
-        if(menu_pos > 4)
-          menu_pos = 1;
-        break;
-  case KEY_RIGHT:
-        move(10,10);
-        if(menu_pos == 1)
-        {
-          NULL;
-        }
-        else if (menu_pos == 2)
-        {
-           NULL;
-        }
-
-        else if (menu_pos == 3)
-        {
-          NULL;
-        }
-
-        else if (menu_pos == 4)
-        {
-          exit_flag = TRUE;
-        }
-        
-        
-  }
-  refresh();
   }while(!exit_flag);
+  getch();
+  refresh();
   endwin();
   return(0);
 }
