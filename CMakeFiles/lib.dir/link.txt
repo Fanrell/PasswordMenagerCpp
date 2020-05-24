@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblib.a  CMakeFiles/lib.dir/src/Menu.cc.o CMakeFiles/lib.dir/src/mainWindow.cc.o CMakeFiles/lib.dir/src/stringer.cc.o
+/usr/bin/ranlib liblib.a

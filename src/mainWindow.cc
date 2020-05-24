@@ -1,5 +1,5 @@
 #include <ncurses.h>
-#include "Menu.cc"
+#include "Menu.h"
 #include <iostream>
 using namespace std;
 

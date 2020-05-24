@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.10)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "./bin")
+
+project(PasswordMenager)
+set(EXECUTABLE_OUTPUT_PATH "bin")
+find_package(Curses REQUIRED)
+include_directories(${CURSES_INCLUDE_DIR})
+
+include_directories("includes")
+file(GLOB SOURCES "src/main.cc")
+
+add_library(lib STATIC src/Menu.cc src/mainWindow.cc src/stringer.cc)
+target_link_libraries(lib)
+
+add_executable(PasswordMenager ${SOURCES})
+target_link_libraries(PasswordMenager lib)
+target_link_libraries(PasswordMenager ${CURSES_LIBRARIES})
+
+install (TARGETS lib DESTINATION "./bin")	
+install (TARGETS PasswordMenager DESTINATION ${CMAKE_PREFIX_PATH})

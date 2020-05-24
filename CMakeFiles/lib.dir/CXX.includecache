@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fanrell/Project/PasswordMenagerCpp/src/mainWindow.cc
+ncurses.h
+-
+Menu.h
+/home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
+iostream
+-
+
+includes/Menu.h
+iostream
+-
+

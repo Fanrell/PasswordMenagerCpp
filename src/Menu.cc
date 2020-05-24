@@ -1,24 +1,11 @@
 #include <iostream>
-#include <ncurses.h>
 #include "stringer.cc"
+#include "Menu.h"
+#include <ncurses.h>
 
 using namespace std;
 
-class Menu
-{
-    int menu_pos = 1;
-    int members;
-    string flierPath = "1";
-private:
-   void FileList();
-    
-public:
-    void MenuDraw(int argc, string test[]);
-    void PointerDraw(int c, bool enter);
-    virtual void EventHandler(int c, bool *exit_flag);
-    //void FileList();
-    
-};
+
 
 
 void Menu::MenuDraw(int argc, string test[])
@@ -36,14 +23,30 @@ void Menu::MenuDraw(int argc, string test[])
 void Menu::FileList()
 {
         move(members+5,0);
-        stringer();
+        if(flierPath.empty())
+        {
+            
+            printw("You didn't open file");
+        }
+        else
+        {
+            printw("You opened file");
+        }
 
 }
 
 void Menu::EventHandler(int c, bool *exit_flag)
 {
+    move(9,0);
+    clrtobot();
+    move(2,0);
     switch (c)
     {
+    case '1':
+        stringer(0,9);
+        break;
+    case '2':
+        break;
     case '3':
         FileList();
         break;

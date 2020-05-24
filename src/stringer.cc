@@ -2,7 +2,7 @@
 #include <ncurses.h>
 using namespace std;
 
-string stringer()
+string stringer(int posx, int posy)
 {
     keypad(stdscr,TRUE);
     int c;
@@ -10,6 +10,7 @@ string stringer()
     int pos = 0;
     bool in_loop = true;
     const char * ret_path;
+    move(posy,posx);
     do
     {
         c = getch();
@@ -21,8 +22,6 @@ string stringer()
             break;
         case('\n'):
             in_loop = false;
-            move(10,10);
-            printw("1");
             break;
         
         default:
