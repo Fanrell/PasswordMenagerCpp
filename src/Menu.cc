@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ncurses.h>
+#include "stringer.cc"
 
 using namespace std;
 
@@ -35,15 +36,7 @@ void Menu::MenuDraw(int argc, string test[])
 void Menu::FileList()
 {
         move(members+5,0);
-        if(flierPath.empty())
-        {
-            
-            printw("You didn't open file");
-        }
-        else
-        {
-            printw("You opened file");
-        }
+        stringer();
 
 }
 
@@ -56,7 +49,6 @@ void Menu::EventHandler(int c, bool *exit_flag)
         break;
     case '4':
         *exit_flag = true;
-
         break;
     }
 }
