@@ -6,12 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/home/fanrell/Project/PasswordMenagerCpp/src/Menu.cc
+iostream
+-
+stringer.cc
+/home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
+Menu.h
+/home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
+ncurses.h
+-
+
 /home/fanrell/Project/PasswordMenagerCpp/src/mainWindow.cc
 ncurses.h
 -
 Menu.h
 /home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
 iostream
+-
+
+/home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
+iostream
+-
+ncurses.h
 -
 
 includes/Menu.h
