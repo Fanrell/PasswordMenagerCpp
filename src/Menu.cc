@@ -8,12 +8,12 @@ using namespace std;
 
 
 
-void Menu::MenuDraw(int argc, string test[])
+void Menu::MenuDraw(int argc, string menuList[])
 {
     members = argc;
     for(int i = 0; i < argc; i++)
     {
-        const char *t = test[i].c_str();
+        const char *t = menuList[i].c_str();
         printw("%i.   ",i+1);
         printw(t);
         printw("\n");

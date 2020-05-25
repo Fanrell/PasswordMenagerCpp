@@ -6,7 +6,7 @@ using namespace std;
 int c;
 bool exit_flag = FALSE;
 bool enter = false;
-string test[] = {"New File","Open File","Passwords List","Exit"};
+string menuList[] = {"New File","Open File","Passwords List","Exit"};
 
 Menu mainMenu;
 bool window() {
@@ -17,7 +17,7 @@ bool window() {
   printw("Password Menager \n");
   printw("============================= \n");
   
-  mainMenu.MenuDraw(4,test);
+  mainMenu.MenuDraw(4,menuList);
   c = getch();
   move(20,20);
   mainMenu.EventHandler(c,&exit_flag);
