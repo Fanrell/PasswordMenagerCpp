@@ -7,9 +7,9 @@ int c;
 bool exit_flag = FALSE;
 bool enter = false;
 string menuList[] = {"New File","Open File","Passwords List","Exit"};
-
 Menu mainMenu;
 bool window() {
+  cbreak();
   initscr();
   keypad(stdscr,TRUE);
   
@@ -18,9 +18,8 @@ bool window() {
   printw("============================= \n");
   
   mainMenu.MenuDraw(4,menuList);
-  c = getch();
   move(20,20);
-  mainMenu.EventHandler(c,&exit_flag);
+  mainMenu.EventHandler(&exit_flag);
   refresh();
 
     return(exit_flag);

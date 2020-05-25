@@ -8,10 +8,10 @@ class Menu
     string flierPath = "1";
 private:
    void FileList();
+   void DrawCursor(int ypos);
     
 public:
     void MenuDraw(int argc, string test[]);
-    void PointerDraw(int c, bool enter);
-    virtual void EventHandler(int c, bool *exit_flag);
+    virtual void EventHandler(bool *exit_flag);
     
 };
