@@ -4,6 +4,7 @@
 CMakeFiles/lib.dir/src/Menu.cc.o: src/Menu.cc
 CMakeFiles/lib.dir/src/Menu.cc.o: src/stringer.cc
 CMakeFiles/lib.dir/src/Menu.cc.o: includes/Menu.h
+CMakeFiles/lib.dir/src/Menu.cc.o: includes/PassList.h
 
 CMakeFiles/lib.dir/src/mainWindow.cc.o: src/mainWindow.cc
 CMakeFiles/lib.dir/src/mainWindow.cc.o: includes/Menu.h

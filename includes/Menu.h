@@ -11,7 +11,7 @@ private:
    void DrawCursor(int ypos);
     
 public:
-    void MenuDraw(int argc, string test[]);
+    virtual void MenuDraw(int argc, string test[]);
     virtual void EventHandler(bool *exit_flag);
     
 };

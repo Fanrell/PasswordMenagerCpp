@@ -5,13 +5,13 @@ using namespace std;
 class PassList
 {
     int start = 0;
-    int end;
+    int end = 10;
     int all_members;
     int point_pos;
     private:
-        void Listing(int s, int k, string data[]);
+        void Listing(string data[]);
         void Events(bool *exit);
         void PointerDraw(int posy);
     public:
-        void Draw(string data[]);
+        void ShowList(string data[]);
 };
