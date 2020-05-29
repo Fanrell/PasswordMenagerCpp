@@ -9,13 +9,31 @@
 /home/fanrell/Project/PasswordMenagerCpp/src/Menu.cc
 iostream
 -
+ncurses.h
+-
+vector
+-
+algorithm
+-
+dirent.h
+-
+fstream
+-
 stringer.cc
 /home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
 Menu.h
 /home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
 PassList.h
 /home/fanrell/Project/PasswordMenagerCpp/src/PassList.h
+FileLister.H
+/home/fanrell/Project/PasswordMenagerCpp/src/FileLister.H
+
+/home/fanrell/Project/PasswordMenagerCpp/src/mainWindow.cc
 ncurses.h
+-
+Menu.h
+/home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
+iostream
 -
 
 /home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
@@ -24,8 +42,16 @@ iostream
 ncurses.h
 -
 
+includes/FileLister.H
+iostream
+-
+vector
+-
+
 includes/Menu.h
 iostream
+-
+fstream
 -
 
 includes/PassList.h

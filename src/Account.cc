@@ -41,10 +41,3 @@ std::string Account::ToString()
 	pss = service+" "+login+" "+password;
 	return(pss);
 }
-
-int main()
-{
-	Account a("test","testlogin");
-	cout << a.ToString()<<endl;
-	return 0;
-}

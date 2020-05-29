@@ -4,6 +4,7 @@
 CMakeFiles/lib.dir/src/Menu.cc.o
  /home/fanrell/Project/PasswordMenagerCpp/src/Menu.cc
  /home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
+ includes/FileLister.H
  includes/Menu.h
  includes/PassList.h
 CMakeFiles/lib.dir/src/mainWindow.cc.o
