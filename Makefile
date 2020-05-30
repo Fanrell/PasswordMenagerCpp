@@ -263,6 +263,33 @@ src/PassList.cc.s:
 	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/PassList.cc.s
 .PHONY : src/PassList.cc.s
 
+src/RSA.o: src/RSA.cc.o
+
+.PHONY : src/RSA.o
+
+# target to build an object file
+src/RSA.cc.o:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/RSA.cc.o
+.PHONY : src/RSA.cc.o
+
+src/RSA.i: src/RSA.cc.i
+
+.PHONY : src/RSA.i
+
+# target to preprocess a source file
+src/RSA.cc.i:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/RSA.cc.i
+.PHONY : src/RSA.cc.i
+
+src/RSA.s: src/RSA.cc.s
+
+.PHONY : src/RSA.s
+
+# target to generate assembly for a file
+src/RSA.cc.s:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/RSA.cc.s
+.PHONY : src/RSA.cc.s
+
 src/main.o: src/main.cc.o
 
 .PHONY : src/main.o
@@ -367,6 +394,9 @@ help:
 	@echo "... src/PassList.o"
 	@echo "... src/PassList.i"
 	@echo "... src/PassList.s"
+	@echo "... src/RSA.o"
+	@echo "... src/RSA.i"
+	@echo "... src/RSA.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

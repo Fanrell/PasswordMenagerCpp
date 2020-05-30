@@ -6,41 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/fanrell/Project/PasswordMenagerCpp/src/FileLister.cc
+/home/fanrell/Project/PasswordMenagerCpp/src/RSA.cc
 iostream
 -
-string
+math.h
 -
-vector
--
-algorithm
--
-ncurses.h
--
-dirent.h
--
-fstream
--
-filesystem
--
-stringer.cc
-/home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
-FileLister.H
-/home/fanrell/Project/PasswordMenagerCpp/src/FileLister.H
-keys.h
-/home/fanrell/Project/PasswordMenagerCpp/src/keys.h
+RSA.h
+/home/fanrell/Project/PasswordMenagerCpp/src/RSA.h
 
-/home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
+includes/RSA.h
 iostream
 -
-ncurses.h
+math.h
 -
-
-includes/FileLister.H
-iostream
--
-vector
--
-
-includes/keys.h
 

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-//https://eduinf.waw.pl/inf/alg/001_search/0067.php
 class RSA
 {
     int puk[2];
