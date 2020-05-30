@@ -6,50 +6,40 @@
 
 #IncludeRegexTransform: 
 
-/home/fanrell/Project/PasswordMenagerCpp/src/Menu.cc
+/home/fanrell/Project/PasswordMenagerCpp/src/FileLister.cc
 iostream
 -
-ncurses.h
+string
 -
 vector
 -
 algorithm
 -
+ncurses.h
+-
 dirent.h
 -
 fstream
 -
-Menu.h
-/home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
-PassList.h
-/home/fanrell/Project/PasswordMenagerCpp/src/PassList.h
+filesystem
+-
+stringer.cc
+/home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
 FileLister.H
 /home/fanrell/Project/PasswordMenagerCpp/src/FileLister.H
 keys.h
 /home/fanrell/Project/PasswordMenagerCpp/src/keys.h
 
-/home/fanrell/Project/PasswordMenagerCpp/src/mainWindow.cc
-ncurses.h
--
-Menu.h
-/home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
+/home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
 iostream
+-
+ncurses.h
 -
 
 includes/FileLister.H
 iostream
 -
 vector
--
-
-includes/Menu.h
-iostream
--
-fstream
--
-
-includes/PassList.h
-iostream
 -
 
 includes/keys.h

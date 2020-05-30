@@ -24,6 +24,7 @@ void FileLister::Events(bool *exit, string *path, ofstream *pass_file, stringvec
 {
     string new_file;
     string new_path;
+    DIR *new_folder;
     switch (getch())
     {
     case KEY_DOWN:
@@ -71,13 +72,32 @@ void FileLister::Events(bool *exit, string *path, ofstream *pass_file, stringvec
         }
         break;
     case '\n':
-        *path += "/"+v[point_pos];
+        new_folder = opendir((*path + "/" + v[point_pos]).c_str());
+        if(new_folder != NULL)
+        {
+            *path += "/" + v[point_pos];
+            closedir(new_folder);
+        }
+        else
+        {
+            new_file = v[point_pos];
+            new_file = new_file.substr(new_file.find("."),new_file.length());
+            // if(new_file == "pssmg")
+            // {
+            //     pass_file -> open(*path+"/"+v[point_pos]);
+            //     *exit = true;
+            // }
+            move(0,10);
+            printw(new_file.c_str());
+        }
+        
+        
         break;
     case KEY_N:
         new_file = stringer(0,end+2);
         new_file += EXT;
         pass_file->open(*path+"/"+new_file);
-        pass_file->close();
+        *exit = true;
         break;
     case KEY_Q:
         *exit = true;
@@ -101,7 +121,7 @@ void FileLister::Listing(stringvec v)
         printw("   %i. ",i+1);
         printw(v[i].c_str());
         printw("\n");
-        if(i==end)
+        if(i==end-1)
             break;
     }
     printw("Confirm: Enter, Move: Arrows, (N)ew, (Q)uit\n");

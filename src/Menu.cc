@@ -1,9 +1,9 @@
 #include <iostream>
 #include <ncurses.h>
-#include <vector>
-#include <algorithm>
-#include <dirent.h>
-#include <fstream>
+#include <vector> // obsługa wektorów
+#include <algorithm> // sortowanie 
+#include <dirent.h> // obsługa otwierzania folderów i listowania zawartośći
+#include <fstream> // otwieranie plików
 #include "Menu.h"
 #include "PassList.h"
 #include "FileLister.H"
