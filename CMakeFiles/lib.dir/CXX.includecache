@@ -19,14 +19,14 @@ dirent.h
 -
 fstream
 -
-stringer.cc
-/home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
 Menu.h
 /home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
 PassList.h
 /home/fanrell/Project/PasswordMenagerCpp/src/PassList.h
 FileLister.H
 /home/fanrell/Project/PasswordMenagerCpp/src/FileLister.H
+keys.h
+/home/fanrell/Project/PasswordMenagerCpp/src/keys.h
 
 /home/fanrell/Project/PasswordMenagerCpp/src/mainWindow.cc
 ncurses.h
@@ -34,12 +34,6 @@ ncurses.h
 Menu.h
 /home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
 iostream
--
-
-/home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
-iostream
--
-ncurses.h
 -
 
 includes/FileLister.H
@@ -57,4 +51,6 @@ fstream
 includes/PassList.h
 iostream
 -
+
+includes/keys.h
 

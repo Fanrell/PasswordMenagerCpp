@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/lib.dir/src/FileLister.cc.o"
   "CMakeFiles/lib.dir/src/Menu.cc.o"
+  "CMakeFiles/lib.dir/src/PassList.cc.o"
   "CMakeFiles/lib.dir/src/mainWindow.cc.o"
   "CMakeFiles/lib.dir/src/stringer.cc.o"
   "liblib.a"

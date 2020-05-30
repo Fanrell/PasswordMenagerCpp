@@ -182,6 +182,33 @@ lib/fast:
 	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/build
 .PHONY : lib/fast
 
+src/FileLister.o: src/FileLister.cc.o
+
+.PHONY : src/FileLister.o
+
+# target to build an object file
+src/FileLister.cc.o:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/FileLister.cc.o
+.PHONY : src/FileLister.cc.o
+
+src/FileLister.i: src/FileLister.cc.i
+
+.PHONY : src/FileLister.i
+
+# target to preprocess a source file
+src/FileLister.cc.i:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/FileLister.cc.i
+.PHONY : src/FileLister.cc.i
+
+src/FileLister.s: src/FileLister.cc.s
+
+.PHONY : src/FileLister.s
+
+# target to generate assembly for a file
+src/FileLister.cc.s:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/FileLister.cc.s
+.PHONY : src/FileLister.cc.s
+
 src/Menu.o: src/Menu.cc.o
 
 .PHONY : src/Menu.o
@@ -208,6 +235,33 @@ src/Menu.s: src/Menu.cc.s
 src/Menu.cc.s:
 	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/Menu.cc.s
 .PHONY : src/Menu.cc.s
+
+src/PassList.o: src/PassList.cc.o
+
+.PHONY : src/PassList.o
+
+# target to build an object file
+src/PassList.cc.o:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/PassList.cc.o
+.PHONY : src/PassList.cc.o
+
+src/PassList.i: src/PassList.cc.i
+
+.PHONY : src/PassList.i
+
+# target to preprocess a source file
+src/PassList.cc.i:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/PassList.cc.i
+.PHONY : src/PassList.cc.i
+
+src/PassList.s: src/PassList.cc.s
+
+.PHONY : src/PassList.s
+
+# target to generate assembly for a file
+src/PassList.cc.s:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/PassList.cc.s
+.PHONY : src/PassList.cc.s
 
 src/main.o: src/main.cc.o
 
@@ -304,9 +358,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... PasswordMenager"
 	@echo "... lib"
+	@echo "... src/FileLister.o"
+	@echo "... src/FileLister.i"
+	@echo "... src/FileLister.s"
 	@echo "... src/Menu.o"
 	@echo "... src/Menu.i"
 	@echo "... src/Menu.s"
+	@echo "... src/PassList.o"
+	@echo "... src/PassList.i"
+	@echo "... src/PassList.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

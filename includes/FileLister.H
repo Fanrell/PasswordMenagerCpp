@@ -11,7 +11,7 @@ class FileLister
     int point_pos;
     private:
         void read_dir(string path, stringvec& v);
-        void Events(bool *exit,string path,ofstream *pass_file);
+        void Events(bool *exit,string *path,ofstream *pass_file, stringvec v);
         void PointerDraw(int posy);
         void Listing(stringvec v);
     public:
