@@ -8,7 +8,7 @@ class PassList
 {
     // typedef vector<Account> accountvec;
     // accountvec passvec;
-    Account acclist[100] = {Account{"t1", "t"}, Account{"t2", "t1"}};
+    Account acclist[100];
     int start = 0;
     int end = 10;
     int all_members = 100;

@@ -15,4 +15,5 @@ class Account
 		Account(string service, string login, string password);
 		string Stringer();
 		string Service();
+		string Saver();
 };

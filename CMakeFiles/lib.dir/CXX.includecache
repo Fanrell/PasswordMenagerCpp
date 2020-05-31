@@ -22,6 +22,14 @@ FileLister.h
 keys.h
 /home/fanrell/Project/PasswordMenagerCpp/src/keys.h
 
+/home/fanrell/Project/PasswordMenagerCpp/src/mainWindow.cc
+ncurses.h
+-
+Menu.h
+/home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
+iostream
+-
+
 includes/Account.h
 iostream
 -

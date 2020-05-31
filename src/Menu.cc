@@ -52,8 +52,6 @@ void Menu::EventHandler(bool *exit_flag)
     case '\n':
         if(menu_pos == 1)
             fl.ShowDirList(&file_path,&file_name ,&decoded);
-            move(0,0);
-            printw(decoded.c_str());
         if(menu_pos == 2)
             pl.ShowList(decoded);
         if(menu_pos == 3)

@@ -48,3 +48,9 @@ string Account::Service()
 {
 	return(service);
 }
+string Account::Saver()
+{
+	string pss;
+	pss = service+" "+login+" "+password+"\n";
+	return(pss);
+}

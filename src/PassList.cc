@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ncurses.h>
+#include <fstream>
 #include "PassList.h"
 #include "keys.h"
 
@@ -135,12 +136,22 @@ void PassList::ShowList(string decoded)
 {
     cbreak();
     bool exit = false;
+    if(decoded != "")
+    {
+        move(0,0);
+        printw("test");
+    }
     do
     {
     Listing();
     PointerDraw(point_pos);
     Events(&exit);
     }while(!exit);
+    ofstream t ("t.txt");
+    for(int i = 0; i < 100; i++)
+    {
+        t << acclist[i].Saver();
+    }
         move(2,0);
     clrtobot();
 }
