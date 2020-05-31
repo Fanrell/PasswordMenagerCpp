@@ -138,8 +138,33 @@ void PassList::ShowList(string decoded)
     bool exit = false;
     if(decoded != "")
     {
-        move(0,0);
-        printw("test");
+        string serv,login,pass;
+        int pos = 0;
+        int loc = 0;
+        for(int i = 0; i<decoded.length();i++)
+        {
+            if(decoded[i] != '\n' && decoded[i] != ' ')
+                switch (pos)
+                {
+                case 0:
+                    serv += decoded[i];
+                    break;
+                case 1:
+                    login += decoded[i];
+                    break;
+                case 2:
+                    pass += decoded[i];
+                    break;
+                }
+            else if(decoded[i] == ' ')
+                pos++;
+            else if(decoded[i] == '\n')
+            {
+                pos = 0;
+                acclist[loc] = Account(serv,login,pass);
+                loc++;
+            }
+        }
     }
     do
     {

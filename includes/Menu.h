@@ -9,7 +9,7 @@ class Menu
     int members;
     string file_path = ".";
     string file_name = "";
-    string decoded = "";
+    string decoded = "tak tak cosjakeihaslo\n";
 private:
    void DrawCursor(int ypos);
     
