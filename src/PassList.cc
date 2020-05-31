@@ -18,7 +18,7 @@ void PassList::Listing()
             printw("\n");
         }
 
-    printw("Chose filed, (N)ew, (D)elete, (Q)uit\n");
+    printw("Chose filed, (n)ew, (d)elete, (q)uit\n");
     move(3,0);
 }
 

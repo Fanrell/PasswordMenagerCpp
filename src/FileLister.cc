@@ -108,7 +108,7 @@ void FileLister::Events(bool *exit, string *path, stringvec v)
             start = 0;
             point_pos = 0;
         }
-        else if (new_folder == NULL && v[point_pos + mod ] != "Makefile")
+        else if (new_folder == NULL)
         {
             tmp = v[point_pos+mod];
             if(tmp.substr(tmp.find(".") + 1) == "pssmg")
@@ -138,20 +138,41 @@ void FileLister::Events(bool *exit, string *path, stringvec v)
     case KEY_N:
         tmp = Inputer("File name");
         tmp += EXT;
-        pass_file.open(*path+"/"+tmp);
-        move(end+3,0);
-        do
+        if(!ifstream(tmp).good())
         {
-        tmp = Inputer("Password: ");
-        }while(tmp.size() < 8 );
-        coder.KeyGenerate(tmp);
-        pass_file << coder.Encrypt("test");
-        *exit = true;
+            pass_file.open(*path+"/"+tmp);
+            move(end+3,0);
+            do
+            {
+            tmp = Inputer("Password: ");
+            }while(tmp.size() < 8 );
+            coder.KeyGenerate(tmp);
+            pass_file << coder.Encrypt("test");
+            *exit = true;
+        }
+        break;
+    case KEY_D:
+        new_folder = opendir((*path + "/" + v[point_pos + mod]).c_str());
+        if (new_folder == NULL)
+        {
+            tmp = v[point_pos+mod];
+            if(tmp.substr(tmp.find(".") + 1) == "pssmg")
+            {
+                read_pass.open(*path + "/" + tmp);
+                tmp = Inputer("Password: ");
+                coder.KeyGenerate(tmp);
+                getline(read_pass,line);
+                if(coder.Decrypt(line) == "test")
+                {
+                    remove((*path + "/" + v[point_pos+mod]).c_str());
+                }
+            }
+        }
         break;
 
     case KEY_S:
     new_folder = opendir((*path + "/" + v[point_pos + mod]).c_str());
-    if (new_folder == NULL && v[point_pos + mod ] != "Makefile")
+    if (new_folder == NULL)
         {
             tmp = v[point_pos+mod];
             if(tmp.substr(tmp.find(".") + 1) == "pssmg")
@@ -198,7 +219,7 @@ void FileLister::Listing(stringvec v)
         if(i==end-1)
             break;
     }
-    printw("Open: Enter, Move: Arrows, (N)ew, (S)ave,(Q)uit\n");
+    printw("Open: Enter, Move: Arrows, (n)ew, (s)ave, (d)elete ,(q)uit\n");
     move(3,0);
 }
 
