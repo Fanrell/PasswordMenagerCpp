@@ -13,7 +13,7 @@ void Menu::MenuDraw(int argc, string menuList[])
         printw(t);
         printw("\n");
     }
-    printw("Confirm: Enter, Move: Arrows");
+    printw("Confirm: Enter, Navigate Arrows");
     DrawCursor(menu_pos);
 }
 

@@ -219,7 +219,7 @@ void FileLister::Listing(stringvec v)
         if(i==end-1)
             break;
     }
-    printw("Open: Enter, Move: Arrows, (n)ew, (s)ave, (d)elete ,(q)uit\n");
+    printw("Open: Enter, Navigate Arrows, (n)ew, (s)ave, (d)elete ,(q)uit\n");
     move(3,0);
 }
 
