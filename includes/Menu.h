@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 using namespace std;
 
 class Menu
@@ -7,9 +8,9 @@ class Menu
     int menu_pos = 1;
     int members;
     string file_path = ".";
-    ofstream pass_file;
+    string file_name = "";
+    string decoded;
 private:
-   void FileList();
    void DrawCursor(int ypos);
     
 public:

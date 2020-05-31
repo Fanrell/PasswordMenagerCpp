@@ -1,11 +1,14 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-#include <Account.h>
+#include "Account.h"
 
 using namespace std;
 
+Account::Account()
+{
 
+}
 
 Account::Account(string service, string login)
 {
@@ -21,7 +24,7 @@ Account::Account(string service, string login, string password)
 	this->password = password;
 }
 
-std::string Account::Generate()
+string Account::Generate()
 {
 	int len = 8 + (rand() % ( 16 - 8 + 1) );
 	int ch;
@@ -35,9 +38,13 @@ std::string Account::Generate()
 	return pass;
 }
 
-std::string Account::ToString()
+string Account::Stringer()
 {
 	string pss;
-	pss = service+" "+login+" "+password;
+	pss = "Service: "+service+" Login: "+login+" Password: "+password;
 	return(pss);
+}
+string Account::Service()
+{
+	return(service);
 }

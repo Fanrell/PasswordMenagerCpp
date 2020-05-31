@@ -5,23 +5,58 @@
 
 using namespace std;
 
-void PassList::Listing(string data[])
+void PassList::Listing()
 {
     move(2,0);
     clrtobot();
     move(2,0);
-    for(int i = start; i<end; i++)
-    {
-        printw("   %i.",i+1);
-        printw(data[i].c_str());
-        printw("\n");
-    }
-    printw("(N)ew, (D)elete, (Q)uit\n");
+        for(int i = start; i<end; i++)
+        {
+            printw("   %i.",i+1);
+            if(point_pos + mod == i)
+                printw(acclist[i].Stringer().c_str());
+            else
+                printw(acclist[i].Service().c_str());
+            printw("\n");
+        }
+
+    printw("Chose filed, (N)ew, (D)elete, (Q)uit\n");
     move(3,0);
+}
+
+string PassList::Inputer(string prompt)
+{
+    keypad(stdscr,TRUE);
+    int c;
+    string path;
+    int pos = 0;
+    bool in_loop = true;
+    do
+    {
+        move(end+2,0);
+        clrtobot();
+        printw(prompt.c_str());
+        printw(path.c_str());
+        c = getch();
+        switch (c)
+        {
+        case('\n'):
+            in_loop = false;
+            break;
+        case KEY_BACKSPACE:
+            path = path.substr(0,path.size()-1);
+            break;
+        default:
+            path += c;        
+            break;
+        }
+    } while (in_loop);
+    return path;
 }
 
 void PassList::Events(bool *exit)
 {
+    string tmp[2];
     switch (getch())
     {
     case KEY_DOWN:
@@ -37,41 +72,52 @@ void PassList::Events(bool *exit)
             point_pos = end-1;
         break;
     case KEY_RIGHT:
-        if(start+10<all_members)
+        if(all_members > 10)
         {
-            start+=10;
-            end += 10;
+            if(start+10<all_members)
+            {
+                start+=10;
+                end += 10;
+            }
+            else
+            {
+                start = all_members - 10;
+                end = all_members;
+            }
+            if(mod < 90)
+                mod += 10;
+            point_pos = 0;
         }
-        else
-        {
-            start = all_members - 10;
-            end = all_members;
-        }
-        point_pos = 0;
         break;
     case KEY_LEFT:
-        if(start - 10 > 0)
+     if(all_members > 10)
         {
-            start -= 10;
-            end -= 10;
+            if(start - 10 > 0)
+            {
+                start -= 10;
+                end -= 10;
+            }
+            else
+            {
+                start = 0;
+                end = 10;
+            }
+            if(mod > 0)
+                mod -= 10;
+            point_pos = 0;
         }
-        else
-        {
-            start = 0;
-            end = 10;
-        }
-        point_pos = 0;
-        break;
-    case '\n':
         break;
     case KEY_N:
+        move(end+3,0);
+        tmp[0] = Inputer("Service name: ");
+        tmp[1] = Inputer("Login: ");
+        acclist[point_pos+mod] = Account(tmp[0],tmp[1]);
         break;
     case KEY_D:
+        acclist[point_pos+mod] = Account();
         break;
     case KEY_Q:
         *exit = true;
-        move(20,0);
-        printw("dasdsa");
         break;
     }
 
@@ -82,16 +128,16 @@ void PassList::PointerDraw(int posy)
 {
     move(posy+2,0);
     printw(">");
+    move(posy+2,0);
 }
 
-void PassList::ShowList(std::string data[])
+void PassList::ShowList(string decoded)
 {
     cbreak();
-    all_members = 100;
     bool exit = false;
     do
     {
-    Listing(data);
+    Listing();
     PointerDraw(point_pos);
     Events(&exit);
     }while(!exit);

@@ -182,6 +182,33 @@ lib/fast:
 	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/build
 .PHONY : lib/fast
 
+src/Account.o: src/Account.cc.o
+
+.PHONY : src/Account.o
+
+# target to build an object file
+src/Account.cc.o:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/Account.cc.o
+.PHONY : src/Account.cc.o
+
+src/Account.i: src/Account.cc.i
+
+.PHONY : src/Account.i
+
+# target to preprocess a source file
+src/Account.cc.i:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/Account.cc.i
+.PHONY : src/Account.cc.i
+
+src/Account.s: src/Account.cc.s
+
+.PHONY : src/Account.s
+
+# target to generate assembly for a file
+src/Account.cc.s:
+	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/Account.cc.s
+.PHONY : src/Account.cc.s
+
 src/FileLister.o: src/FileLister.cc.o
 
 .PHONY : src/FileLister.o
@@ -385,6 +412,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... PasswordMenager"
 	@echo "... lib"
+	@echo "... src/Account.o"
+	@echo "... src/Account.i"
+	@echo "... src/Account.s"
 	@echo "... src/FileLister.o"
 	@echo "... src/FileLister.i"
 	@echo "... src/FileLister.s"

@@ -1,14 +1,18 @@
 #include <iostream>
 
+using namespace std;
+
 class Account
 {
-	std::string service;
-	std::string login;
-	std::string password;
+	string service;
+	string login;
+	string password;
 	private:
-		std::string Generate();
+		string Generate();
 	public:
-		Account(std::string service, std::string login);
-		Account(std::string service, std::string login, std::string password);
-		std::string ToString();
+		Account();
+		Account(string service, string login);
+		Account(string service, string login, string password);
+		string Stringer();
+		string Service();
 };
