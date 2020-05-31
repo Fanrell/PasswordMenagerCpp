@@ -136,7 +136,7 @@ void FileLister::Events(bool *exit, string *path, stringvec v)
         
         break;
     case KEY_N:
-        tmp = Inputer("File name");
+        tmp = Inputer("File name: ");
         tmp += EXT;
         if(!ifstream(tmp).good())
         {
