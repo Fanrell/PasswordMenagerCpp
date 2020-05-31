@@ -244,9 +244,6 @@ string FileLister::ShowDirList(string *path,string decoded)
     }while(!exit);
         move(2,0);
     clrtobot();
-    ofstream t ("t.txt");
-    t<< deco;
-    t.close();
     return deco;
     
 }
