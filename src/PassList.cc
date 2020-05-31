@@ -86,6 +86,7 @@ void PassList::PointerDraw(int posy)
 
 void PassList::ShowList(std::string data[])
 {
+    cbreak();
     all_members = 100;
     bool exit = false;
     do

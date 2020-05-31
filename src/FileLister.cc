@@ -6,6 +6,7 @@
 #include <dirent.h>
 #include <fstream>
 #include <filesystem>
+#include <regex>
 #include "stringer.cc"
 #include "FileLister.H"
 #include "keys.h"
@@ -24,6 +25,8 @@ void FileLister::Events(bool *exit, string *path, ofstream *pass_file, stringvec
 {
     string new_file;
     string new_path;
+    regex ex ("\\w*.pssmg");
+    smatch to_open;
     DIR *new_folder;
     switch (getch())
     {
@@ -46,10 +49,12 @@ void FileLister::Events(bool *exit, string *path, ofstream *pass_file, stringvec
             {
                 start+=10;
                 end += 10;
+                mod += 10;
             }
             else
             {
                 start = all_members - 10;
+                mod += all_members - 10;
                 end = all_members;
             }
             point_pos = 0;
@@ -62,33 +67,39 @@ void FileLister::Events(bool *exit, string *path, ofstream *pass_file, stringvec
             {
                 start -= 10;
                 end -= 10;
+                mod -= 10;
             }
             else
             {
                 start = 0;
                 end = 10;
+                mod = 0;
             }
             point_pos = 0;
         }
         break;
     case '\n':
-        new_folder = opendir((*path + "/" + v[point_pos]).c_str());
+        new_folder = opendir((*path + "/" + v[point_pos + mod]).c_str());
         if(new_folder != NULL)
         {
-            *path += "/" + v[point_pos];
+            *path += "/" + v[point_pos+mod];
             closedir(new_folder);
+            mod = 0;
+            end = 10;
+            start = 0;
+            point_pos = 0;
         }
-        else
+        else if (new_folder == NULL && v[point_pos + mod ] != "Makefile")
         {
-            new_file = v[point_pos];
-            new_file = new_file.substr(new_file.find("."),new_file.length());
-            // if(new_file == "pssmg")
-            // {
-            //     pass_file -> open(*path+"/"+v[point_pos]);
-            //     *exit = true;
-            // }
-            move(0,10);
-            printw(new_file.c_str());
+            new_file = v[point_pos+mod];
+            if(new_file.substr(new_file.find(".") + 1) == "pssmg")
+            {
+                // pass_file -> open(*path+"/"+v[point_pos]);
+                // *exit = true;
+                move(1,10);
+                printw("dadas");
+            }
+
         }
         
         
@@ -101,8 +112,6 @@ void FileLister::Events(bool *exit, string *path, ofstream *pass_file, stringvec
         break;
     case KEY_Q:
         *exit = true;
-        move(20,0);
-        printw("dasdsa");
         break;
     }
 }
@@ -130,6 +139,7 @@ void FileLister::Listing(stringvec v)
 
 void FileLister::ShowDirList(string *path, ofstream *pass_file)
 {
+    cbreak();
     all_members = 100;
     bool exit = false;
     stringvec dir_list;

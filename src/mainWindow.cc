@@ -18,7 +18,6 @@ bool window() {
   printw("============================= \n");
   
   mainMenu.MenuDraw(3,menuList);
-  move(20,20);
   mainMenu.EventHandler(&exit_flag);
   refresh();
 

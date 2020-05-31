@@ -45,6 +45,7 @@ void Menu::DrawCursor(int ypos)
 {
     move(ypos+1,0);
     printw(">");
+   
 }
 
 void Menu::EventHandler(bool *exit_flag)
