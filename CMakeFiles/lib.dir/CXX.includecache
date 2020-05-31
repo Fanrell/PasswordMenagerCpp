@@ -6,27 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/fanrell/Project/PasswordMenagerCpp/src/Menu.cc
-Menu.h
-/home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
-
-/home/fanrell/Project/PasswordMenagerCpp/src/mainWindow.cc
-ncurses.h
--
-Menu.h
-/home/fanrell/Project/PasswordMenagerCpp/src/Menu.h
-iostream
--
-
-includes/Account.h
-iostream
--
-iostream
--
-stdlib.h
--
-time.h
--
+/home/fanrell/Project/PasswordMenagerCpp/src/FileLister.cc
+FileLister.h
+/home/fanrell/Project/PasswordMenagerCpp/src/FileLister.h
 
 includes/FileLister.h
 iostream
@@ -45,28 +27,6 @@ keys.h
 includes/keys.h
 RSA.h
 includes/RSA.h
-
-includes/Menu.h
-iostream
--
-ncurses.h
--
-PassList.h
-includes/PassList.h
-FileLister.h
-includes/FileLister.h
-keys.h
-includes/keys.h
-
-includes/PassList.h
-iostream
--
-ncurses.h
--
-Account.h
-includes/Account.h
-keys.h
-includes/keys.h
 
 includes/RSA.h
 iostream

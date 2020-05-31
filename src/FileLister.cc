@@ -50,7 +50,7 @@ void FileLister::Events(bool *exit, string *path, stringvec v)
     switch (getch())
     {
     case KEY_DOWN:
-        if(point_pos<end-1)
+        if(point_pos<end - start - 1)
             point_pos++;
         else
             point_pos = 0;
@@ -59,12 +59,12 @@ void FileLister::Events(bool *exit, string *path, stringvec v)
         if(point_pos>0)
             point_pos--;
         else
-            point_pos = end-1;
+            point_pos = end-start-1;
         break;
     case KEY_RIGHT:
         if(all_members > 10)
         {
-            if(start+10<all_members)
+            if(end+10<all_members)
             {
                 start+=10;
                 end += 10;
@@ -72,8 +72,8 @@ void FileLister::Events(bool *exit, string *path, stringvec v)
             }
             else
             {
-                start = all_members - 10;
-                mod += all_members - 10;
+                start = end;
+                mod += 10;
                 end = all_members;
             }
             point_pos = 0;
