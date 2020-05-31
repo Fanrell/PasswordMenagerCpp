@@ -5,7 +5,6 @@ CMakeFiles/lib.dir/src/Account.cc.o: src/Account.cc
 CMakeFiles/lib.dir/src/Account.cc.o: includes/Account.h
 
 CMakeFiles/lib.dir/src/FileLister.cc.o: src/FileLister.cc
-CMakeFiles/lib.dir/src/FileLister.cc.o: src/stringer.cc
 CMakeFiles/lib.dir/src/FileLister.cc.o: includes/FileLister.h
 CMakeFiles/lib.dir/src/FileLister.cc.o: includes/RSA.h
 CMakeFiles/lib.dir/src/FileLister.cc.o: includes/keys.h
@@ -27,7 +26,10 @@ CMakeFiles/lib.dir/src/RSA.cc.o: src/RSA.cc
 CMakeFiles/lib.dir/src/RSA.cc.o: includes/RSA.h
 
 CMakeFiles/lib.dir/src/mainWindow.cc.o: src/mainWindow.cc
+CMakeFiles/lib.dir/src/mainWindow.cc.o: includes/Account.h
+CMakeFiles/lib.dir/src/mainWindow.cc.o: includes/FileLister.h
 CMakeFiles/lib.dir/src/mainWindow.cc.o: includes/Menu.h
-
-CMakeFiles/lib.dir/src/stringer.cc.o: src/stringer.cc
+CMakeFiles/lib.dir/src/mainWindow.cc.o: includes/PassList.h
+CMakeFiles/lib.dir/src/mainWindow.cc.o: includes/RSA.h
+CMakeFiles/lib.dir/src/mainWindow.cc.o: includes/keys.h
 

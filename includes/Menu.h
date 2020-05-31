@@ -1,6 +1,8 @@
 #include <iostream>
-#include <fstream>
-#include <vector>
+#include <ncurses.h>
+#include "PassList.h"
+#include "FileLister.h"
+#include "keys.h"
 using namespace std;
 
 class Menu
@@ -8,8 +10,7 @@ class Menu
     int menu_pos = 1;
     int members;
     string file_path = ".";
-    string file_name = "";
-    string decoded = "tak tak cosjakeihaslo\n";
+    string decoded = "";
 private:
    void DrawCursor(int ypos);
     

@@ -10,7 +10,7 @@ include_directories(${CURSES_INCLUDE_DIR})
 include_directories("includes")
 file(GLOB SOURCES "src/main.cc")
 
-add_library(lib src/Menu.cc src/mainWindow.cc src/Account.cc src/stringer.cc src/FileLister.cc src/PassList.cc src/RSA.cc)
+add_library(lib src/Menu.cc src/mainWindow.cc src/Account.cc src/FileLister.cc src/PassList.cc src/RSA.cc)
 target_link_libraries(lib)
 
 add_executable(PasswordMenager ${SOURCES})

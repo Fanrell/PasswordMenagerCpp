@@ -3,5 +3,10 @@
 
 CMakeFiles/PasswordMenager.dir/src/main.cc.o: src/main.cc
 CMakeFiles/PasswordMenager.dir/src/main.cc.o: src/mainWindow.cc
+CMakeFiles/PasswordMenager.dir/src/main.cc.o: includes/Account.h
+CMakeFiles/PasswordMenager.dir/src/main.cc.o: includes/FileLister.h
 CMakeFiles/PasswordMenager.dir/src/main.cc.o: includes/Menu.h
+CMakeFiles/PasswordMenager.dir/src/main.cc.o: includes/PassList.h
+CMakeFiles/PasswordMenager.dir/src/main.cc.o: includes/RSA.h
+CMakeFiles/PasswordMenager.dir/src/main.cc.o: includes/keys.h
 

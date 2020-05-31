@@ -1,5 +1,3 @@
-#include <iostream>
-#include <math.h>
 #include "RSA.h"
 
 using namespace std;

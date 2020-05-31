@@ -1,8 +1,5 @@
-#include <iostream>
-#include <ncurses.h>
-#include <fstream>
 #include "PassList.h"
-#include "keys.h"
+
 
 using namespace std;
 
@@ -132,7 +129,7 @@ void PassList::PointerDraw(int posy)
     move(posy+2,0);
 }
 
-void PassList::ShowList(string decoded)
+string PassList::ShowList(string decoded)
 {
     cbreak();
     bool exit = false;
@@ -163,6 +160,9 @@ void PassList::ShowList(string decoded)
                 pos = 0;
                 acclist[loc] = Account(serv,login,pass);
                 loc++;
+                serv = "";
+                login = "";
+                pass = "";
             }
         }
     }
@@ -172,11 +172,11 @@ void PassList::ShowList(string decoded)
     PointerDraw(point_pos);
     Events(&exit);
     }while(!exit);
-    ofstream t ("t.txt");
     for(int i = 0; i < 100; i++)
     {
-        t << acclist[i].Saver();
+        d += acclist[i].Saver();
     }
         move(2,0);
     clrtobot();
+    return d;
 }

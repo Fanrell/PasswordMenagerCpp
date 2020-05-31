@@ -96,22 +96,9 @@ CMakeFiles/lib.dir/src/Account.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lib.dir/src/Account.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fanrell/Project/PasswordMenagerCpp/src/Account.cc -o CMakeFiles/lib.dir/src/Account.cc.s
 
-CMakeFiles/lib.dir/src/stringer.cc.o: CMakeFiles/lib.dir/flags.make
-CMakeFiles/lib.dir/src/stringer.cc.o: src/stringer.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fanrell/Project/PasswordMenagerCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/lib.dir/src/stringer.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lib.dir/src/stringer.cc.o -c /home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
-
-CMakeFiles/lib.dir/src/stringer.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lib.dir/src/stringer.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc > CMakeFiles/lib.dir/src/stringer.cc.i
-
-CMakeFiles/lib.dir/src/stringer.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lib.dir/src/stringer.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc -o CMakeFiles/lib.dir/src/stringer.cc.s
-
 CMakeFiles/lib.dir/src/FileLister.cc.o: CMakeFiles/lib.dir/flags.make
 CMakeFiles/lib.dir/src/FileLister.cc.o: src/FileLister.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fanrell/Project/PasswordMenagerCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/lib.dir/src/FileLister.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fanrell/Project/PasswordMenagerCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/lib.dir/src/FileLister.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lib.dir/src/FileLister.cc.o -c /home/fanrell/Project/PasswordMenagerCpp/src/FileLister.cc
 
 CMakeFiles/lib.dir/src/FileLister.cc.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/lib.dir/src/FileLister.cc.s: cmake_force
 
 CMakeFiles/lib.dir/src/PassList.cc.o: CMakeFiles/lib.dir/flags.make
 CMakeFiles/lib.dir/src/PassList.cc.o: src/PassList.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fanrell/Project/PasswordMenagerCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/lib.dir/src/PassList.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fanrell/Project/PasswordMenagerCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/lib.dir/src/PassList.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lib.dir/src/PassList.cc.o -c /home/fanrell/Project/PasswordMenagerCpp/src/PassList.cc
 
 CMakeFiles/lib.dir/src/PassList.cc.i: cmake_force
@@ -137,7 +124,7 @@ CMakeFiles/lib.dir/src/PassList.cc.s: cmake_force
 
 CMakeFiles/lib.dir/src/RSA.cc.o: CMakeFiles/lib.dir/flags.make
 CMakeFiles/lib.dir/src/RSA.cc.o: src/RSA.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fanrell/Project/PasswordMenagerCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/lib.dir/src/RSA.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fanrell/Project/PasswordMenagerCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/lib.dir/src/RSA.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lib.dir/src/RSA.cc.o -c /home/fanrell/Project/PasswordMenagerCpp/src/RSA.cc
 
 CMakeFiles/lib.dir/src/RSA.cc.i: cmake_force
@@ -153,7 +140,6 @@ lib_OBJECTS = \
 "CMakeFiles/lib.dir/src/Menu.cc.o" \
 "CMakeFiles/lib.dir/src/mainWindow.cc.o" \
 "CMakeFiles/lib.dir/src/Account.cc.o" \
-"CMakeFiles/lib.dir/src/stringer.cc.o" \
 "CMakeFiles/lib.dir/src/FileLister.cc.o" \
 "CMakeFiles/lib.dir/src/PassList.cc.o" \
 "CMakeFiles/lib.dir/src/RSA.cc.o"
@@ -164,13 +150,12 @@ lib_EXTERNAL_OBJECTS =
 liblib.a: CMakeFiles/lib.dir/src/Menu.cc.o
 liblib.a: CMakeFiles/lib.dir/src/mainWindow.cc.o
 liblib.a: CMakeFiles/lib.dir/src/Account.cc.o
-liblib.a: CMakeFiles/lib.dir/src/stringer.cc.o
 liblib.a: CMakeFiles/lib.dir/src/FileLister.cc.o
 liblib.a: CMakeFiles/lib.dir/src/PassList.cc.o
 liblib.a: CMakeFiles/lib.dir/src/RSA.cc.o
 liblib.a: CMakeFiles/lib.dir/build.make
 liblib.a: CMakeFiles/lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fanrell/Project/PasswordMenagerCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library liblib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fanrell/Project/PasswordMenagerCpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library liblib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lib.dir/link.txt --verbose=$(VERBOSE)
 

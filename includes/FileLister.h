@@ -1,5 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <ncurses.h>
+#include <dirent.h>
+#include <fstream>
+#include "keys.h"
 #include "RSA.h"
 using namespace std;
 
@@ -11,8 +16,7 @@ class FileLister
     int all_members;
     int point_pos;
     int mod = 0;
-    string *deco;
-    string *file;
+    string deco;
     ofstream pass_file;
     ifstream read_pass;
     RSA coder;
@@ -23,5 +27,5 @@ class FileLister
         void Listing(stringvec v);
         string Inputer(string prompt);
     public:
-        void ShowDirList(string *path,string *filename ,string *decoded);
+        string ShowDirList(string *path,string decoded);
 };

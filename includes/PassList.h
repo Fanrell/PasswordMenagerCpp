@@ -1,25 +1,24 @@
 #include <iostream>
-#include <vector>
+#include <ncurses.h>
 #include "Account.h"
+#include "keys.h"
 
 using namespace std;
 
 class PassList
 {
-    // typedef vector<Account> accountvec;
-    // accountvec passvec;
     Account acclist[100];
+    string d;
     int start = 0;
     int end = 10;
     int all_members = 100;
     int point_pos = 0;
     int mod = 0;
-    int ocupated = 0;
     private:
         void Listing();
         void Events(bool *exit);
         void PointerDraw(int posy);
         string Inputer(string prompt);
     public:
-        void ShowList(string decoded);
+        string ShowList(string decoded);
 };

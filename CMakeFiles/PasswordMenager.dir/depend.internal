@@ -4,4 +4,9 @@
 CMakeFiles/PasswordMenager.dir/src/main.cc.o
  /home/fanrell/Project/PasswordMenagerCpp/src/main.cc
  /home/fanrell/Project/PasswordMenagerCpp/src/mainWindow.cc
+ includes/Account.h
+ includes/FileLister.h
  includes/Menu.h
+ includes/PassList.h
+ includes/RSA.h
+ includes/keys.h

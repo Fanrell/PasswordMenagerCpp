@@ -1,14 +1,5 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <ncurses.h>
-#include <dirent.h>
-#include <fstream>
-#include <filesystem>
-#include "stringer.cc"
+
 #include "FileLister.h"
-#include "keys.h"
 using namespace std;
 
 void FileLister::read_dir(string path, stringvec& v)
@@ -53,7 +44,7 @@ string FileLister::Inputer(string prompt)
 
 void FileLister::Events(bool *exit, string *path, stringvec v)
 {
-    string new_file;
+    string tmp;
     DIR *new_folder;
     string line;
     switch (getch())
@@ -119,22 +110,25 @@ void FileLister::Events(bool *exit, string *path, stringvec v)
         }
         else if (new_folder == NULL && v[point_pos + mod ] != "Makefile")
         {
-            new_file = v[point_pos+mod];
-            if(new_file.substr(new_file.find(".") + 1) == "pssmg")
+            tmp = v[point_pos+mod];
+            if(tmp.substr(tmp.find(".") + 1) == "pssmg")
             {
-                read_pass.open(*path + "/" + new_file);
-                new_file = Inputer("Password: ");
-                coder.KeyGenerate(new_file);
-                getline(read_pass,line);
-                if(coder.Decrypt(line) == "test")
+                read_pass.open(*path + "/" + tmp);
+                tmp = Inputer("Password: ");
+                if(tmp.size() != 0)
                 {
-                    for(line; getline(read_pass,line);)
+                    coder.KeyGenerate(tmp);
+                    getline(read_pass,line);
+                    if(coder.Decrypt(line) == "test")
                     {
-                        *deco += coder.Decrypt(line);
-                        *file = v[point_pos+mod];
+                        for(line; getline(read_pass,line);)
+                        {
+                            deco += coder.Decrypt(line);
+                        }
                     }
+                    read_pass.close();
+                    *exit = true;
                 }
-                
             }
 
         }
@@ -142,18 +136,44 @@ void FileLister::Events(bool *exit, string *path, stringvec v)
         
         break;
     case KEY_N:
-        new_file = Inputer("File name");
-        new_file += EXT;
-        *file = new_file;
-        pass_file.open(*path+"/"+new_file);
+        tmp = Inputer("File name");
+        tmp += EXT;
+        pass_file.open(*path+"/"+tmp);
         move(end+3,0);
         do
         {
-        new_file = Inputer("Password: ");
-        }while(new_file.size() < 8);
-        coder.KeyGenerate(new_file);
+        tmp = Inputer("Password: ");
+        }while(tmp.size() < 8 );
+        coder.KeyGenerate(tmp);
         pass_file << coder.Encrypt("test");
         *exit = true;
+        break;
+
+    case KEY_S:
+    new_folder = opendir((*path + "/" + v[point_pos + mod]).c_str());
+    if (new_folder == NULL && v[point_pos + mod ] != "Makefile")
+        {
+            tmp = v[point_pos+mod];
+            if(tmp.substr(tmp.find(".") + 1) == "pssmg")
+            {
+                read_pass.open(*path + "/" + tmp);
+                tmp = Inputer("Password: ");
+                coder.KeyGenerate(tmp);
+                getline(read_pass,line);
+                if(coder.Decrypt(line) == "test")
+                {
+                    read_pass.close();
+                    pass_file.open(*path + "/" + v[point_pos+mod]);
+                    pass_file << coder.Encrypt("test");
+                    pass_file << "\n";
+                    pass_file << coder.Encrypt(deco);
+                    pass_file.close();
+                    *exit = true;
+                }
+                
+            }
+
+        }
         break;
     case KEY_Q:
         *exit = true;
@@ -178,18 +198,17 @@ void FileLister::Listing(stringvec v)
         if(i==end-1)
             break;
     }
-    printw("Confirm: Enter, Move: Arrows, (N)ew, (Q)uit\n");
+    printw("Open: Enter, Move: Arrows, (N)ew, (S)ave,(Q)uit\n");
     move(3,0);
 }
 
-void FileLister::ShowDirList(string *path,string *filename ,string *decoded)
+string FileLister::ShowDirList(string *path,string decoded)
 {
     cbreak();
     all_members = 100;
     bool exit = false;
     stringvec dir_list;
     deco = decoded;
-    file = filename;
     do
     {
     read_dir(*path,dir_list);
@@ -204,5 +223,9 @@ void FileLister::ShowDirList(string *path,string *filename ,string *decoded)
     }while(!exit);
         move(2,0);
     clrtobot();
+    ofstream t ("t.txt");
+    t<< deco;
+    t.close();
+    return deco;
     
 }

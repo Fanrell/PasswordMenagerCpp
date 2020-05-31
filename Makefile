@@ -371,33 +371,6 @@ src/mainWindow.cc.s:
 	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/mainWindow.cc.s
 .PHONY : src/mainWindow.cc.s
 
-src/stringer.o: src/stringer.cc.o
-
-.PHONY : src/stringer.o
-
-# target to build an object file
-src/stringer.cc.o:
-	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/stringer.cc.o
-.PHONY : src/stringer.cc.o
-
-src/stringer.i: src/stringer.cc.i
-
-.PHONY : src/stringer.i
-
-# target to preprocess a source file
-src/stringer.cc.i:
-	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/stringer.cc.i
-.PHONY : src/stringer.cc.i
-
-src/stringer.s: src/stringer.cc.s
-
-.PHONY : src/stringer.s
-
-# target to generate assembly for a file
-src/stringer.cc.s:
-	$(MAKE) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/stringer.cc.s
-.PHONY : src/stringer.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -433,9 +406,6 @@ help:
 	@echo "... src/mainWindow.o"
 	@echo "... src/mainWindow.i"
 	@echo "... src/mainWindow.s"
-	@echo "... src/stringer.o"
-	@echo "... src/stringer.i"
-	@echo "... src/stringer.s"
 .PHONY : help
 
 

@@ -1,10 +1,5 @@
-#include <iostream>
-#include <ncurses.h>
-#include <vector> // obsługa wektorów
 #include "Menu.h"
-#include "PassList.h"
-#include "FileLister.h"
-#include "keys.h"
+
 
 using namespace std;
 
@@ -31,7 +26,6 @@ void Menu::DrawCursor(int ypos)
 
 void Menu::EventHandler(bool *exit_flag)
 {
-    // pass_vect.push_back(Account("test","test1"));
     PassList pl;
     FileLister fl;
     switch (getch())
@@ -51,9 +45,9 @@ void Menu::EventHandler(bool *exit_flag)
         break;
     case '\n':
         if(menu_pos == 1)
-            fl.ShowDirList(&file_path,&file_name ,&decoded);
+            decoded = fl.ShowDirList(&file_path,decoded);
         if(menu_pos == 2)
-            pl.ShowList(decoded);
+            decoded = pl.ShowList(decoded);
         if(menu_pos == 3)
         {
             *exit_flag = true;

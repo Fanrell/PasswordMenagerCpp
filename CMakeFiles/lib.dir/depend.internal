@@ -6,7 +6,6 @@ CMakeFiles/lib.dir/src/Account.cc.o
  includes/Account.h
 CMakeFiles/lib.dir/src/FileLister.cc.o
  /home/fanrell/Project/PasswordMenagerCpp/src/FileLister.cc
- /home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
  includes/FileLister.h
  includes/RSA.h
  includes/keys.h
@@ -28,6 +27,9 @@ CMakeFiles/lib.dir/src/RSA.cc.o
  includes/RSA.h
 CMakeFiles/lib.dir/src/mainWindow.cc.o
  /home/fanrell/Project/PasswordMenagerCpp/src/mainWindow.cc
+ includes/Account.h
+ includes/FileLister.h
  includes/Menu.h
-CMakeFiles/lib.dir/src/stringer.cc.o
- /home/fanrell/Project/PasswordMenagerCpp/src/stringer.cc
+ includes/PassList.h
+ includes/RSA.h
+ includes/keys.h

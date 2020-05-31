@@ -1,6 +1,3 @@
-#include <iostream>
-#include <stdlib.h>
-#include <time.h>
 #include "Account.h"
 
 using namespace std;
