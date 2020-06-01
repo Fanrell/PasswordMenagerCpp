@@ -44,6 +44,8 @@ string PassList::Inputer(string prompt)
         case KEY_BACKSPACE:
             path = path.substr(0,path.size()-1);
             break;
+        case ' ':
+            break;
         default:
             path += c;        
             break;
