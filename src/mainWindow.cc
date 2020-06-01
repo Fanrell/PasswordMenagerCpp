@@ -5,7 +5,6 @@ using namespace std;
 
 int c;
 bool exit_flag = FALSE;
-bool enter = false;
 string menuList[] = {"File List","Passwords List","Exit"};
 Menu mainMenu;
 bool window() {
